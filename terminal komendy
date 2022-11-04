@@ -47,4 +47,4 @@ where id_postaci = 1;
 
 
 alter table postac1
-add foreign key (id_postaci) references postac1_ibfk_1(id_postaci);
+add column statek;
