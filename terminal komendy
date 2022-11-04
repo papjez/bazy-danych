@@ -1,0 +1,50 @@
+create table przetwory (
+id_przetworu int primary key,
+rok_produkcji int(4) unsigned,
+id_wykonawcy int, zawartość varchar(255),
+dodatek varchar(255) default 'papryczka chilli',
+id_konsumenta int,
+foreign key (id_wykonawcy) references postac1(id_postaci),
+foreign key (id_konsumenta) references postac1(id_postaci));
+
+
+insert into przetwory values(default, 2022,1,'bigos',default,3);
+
+
+
+insert into postac1 (nazwa,rodzaj)
+values 
+('wiking1','wiking'),
+('wiking2','wiking'),
+('wiking3','wiking'),
+('wiking4','wiking'),
+('wiking5','wiking');
+
+
+select * from postac1 wiking2;
+
+
+create table statek (
+nazwa_statku varchar(40) primary key,
+rodzaj_statku enum('transportowy','rybacki'),
+data_wodowania date,
+max_ladownosc int unsigned);
+
+
+insert into statek (nazwa_statku)
+values
+('statek1'),
+('statek2');
+
+select * from statek statek2;
+
+
+alter table postac1 add funkcja varchar(40);
+
+update postac1 
+set funkcja = 'kapitan'
+where id_postaci = 1;
+
+
+alter table postac1
+add foreign key (id_postaci) references postac1_ibfk_1(id_postaci);
