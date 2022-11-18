@@ -48,3 +48,23 @@ where id_postaci = 1;
 
 alter table postac1
 add column statek;
+
+
+
+_______________________________________________________________________________________________________________________________________________________________________
+
+LAB 4
+
+select * from postac1
+where nazwa != 'Bjorn'
+and rodzaj='wiking'
+limit 2;
+delete from postac1 where id_postaci=...(id ktore pasuje)
+
+1b
+alter table postac drop primary key;
+#problem 1 - istniejące klucze obce w tej kolumnie
+#tabela przetwory, walizka, ewntualnie izba
+#usuwamoe lklczy obcych
+alter table przetwory drop foreign key 'przetwory_ibfk_1';
+#zeby go znalesc wpisac show create table i poszukac nazwy klucza obcego
