@@ -66,5 +66,34 @@ alter table postac drop primary key;
 #problem 1 - istniejące klucze obce w tej kolumnie
 #tabela przetwory, walizka, ewntualnie izba
 #usuwamoe lklczy obcych
-alter table przetwory drop foreign key 'przetwory_ibfk_1';
+alter table przetwory drop foreign key przetwory_ibfk_1;
 #zeby go znalesc wpisac show create table i poszukac nazwy klucza obcego
+#problem 2 atrubut auto_increment trzeba go usunac
+alter table postac1 modify id_postaci int;
+# drop primary key powinien zadziałac
+alter table postac1 drop primary key;
+
+
+
+zadanie 2
+
+
+alter table postac add pesel char(11) first;
+alter table postac add primary key(pesel);
+update postac1 set pesel='12345645789'+ is_postaci;
+alter table postac add primary key(pesel);
+
+2b
+alter table postac1 modify rodzaj enum('wiking','ptak','kobieta','syrena');
+2c
+UPDATE `debinskit`.`postac1` SET `id_postaci` = '8', `nazwa` = 'gertruda nieszczera' `rodzaj` = 'syrena' WHERE (`id_postaci` = '8');
+
+
+
+
+
+
+
+
+
+
