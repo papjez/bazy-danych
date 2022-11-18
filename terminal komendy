@@ -88,7 +88,15 @@ alter table postac1 modify rodzaj enum('wiking','ptak','kobieta','syrena');
 2c
 UPDATE `debinskit`.`postac1` SET `id_postaci` = '8', `nazwa` = 'gertruda nieszczera' `rodzaj` = 'syrena' WHERE (`id_postaci` = '8');
 
+3a
+update postac1 set statek='nazwa statku ktora wybralismy' where nazwa LIKE '%a%';
 
+select nazwa from postac where nazwa regexp '[a]';
+
+3b
+update statek set max_ladownosc=max_ladownosc*0.7 where data_wodowania >='1900-01-01' and data_wodowania <='2000-12-31'
+
+select year(data_wodowania from postac;
 
 
 
