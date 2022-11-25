@@ -103,6 +103,10 @@ select year(data_wodowania from postac;
 create table marynarz like postac;
 insert into marynarz select * from postac
 
+create table kreatura like wikingowie.kreatura
+insert into kreatura from wikingowie.kreatura
+
+powtorzyc z zasob i ekwipunek
 
 
 select idZasobu, nazwa, waga, ilosc, dataPozyskania, rodzaj from wikingowie.zasob where rodzaj=('jedzenie')
