@@ -100,16 +100,21 @@ where year(data_wodowania) between 1901 and 2000
 
 select year(data_wodowania from postac;
 
-create table marynarz like postac;
-insert into marynarz select * from postac
+alter table... -> dodanie wartosci wąż w kolumnie rodzaj w tabelui postac1
+alter table postac1 modify rodzaj enum(wszyswtko co byl.o wczesniej + waz)
 
-create table kreatura like wikingowie.kreatura
-insert into kreatura from wikingowie.kreatura
+create table marynarz like postac1;  - przenosi klucz glowny, robi tylko strukture
+insert into marynarz select * from postac1; - wstawienei danych z innej tabeli do skopiowanej taqbeli
 
-powtorzyc z zasob i ekwipunek
+create table marynarz select * from postac1;   - nie przenosi kluczsa glownego
 
+create table ekwipunek like wikingowie.ekwipunek; itd.
 
 select idZasobu, nazwa, waga, ilosc, dataPozyskania, rodzaj from wikingowie.zasob where rodzaj=('jedzenie')
+
+
+
+
 
 
 
