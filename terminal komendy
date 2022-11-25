@@ -100,6 +100,14 @@ where year(data_wodowania) between 1901 and 2000
 
 select year(data_wodowania from postac;
 
+create table marynarz like postac;
+insert into marynarz select * from postac
+
+
+
+select idZasobu, nazwa, waga, ilosc, dataPozyskania, rodzaj from wikingowie.zasob where rodzaj=('jedzenie')
+
+
 
 
 
