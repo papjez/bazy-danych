@@ -141,14 +141,54 @@ to numery kolumn
 select * from kreatura order by dataUr limit 5;
 select * from kreatura order by dataUr limit 5,5;
 
+select rodzaj from kreatura where rodzaj regexp '^w$';
+select rodzaj from kreatura where rodzaj like '^w$';
 
+wybieranie nazw ktore zaczynaja sie na W
 
+select distinct rodzaj from zasob;
 
+wartosc unikalna (distinct) nie pojawiaja sie duplikaty
 
+select distinct nazwa, dataPozyskania from zasob;
 
+select distinct(rodzaj) from zasob;
 
+jest to funkcja
 
+# funkcja concat()
+select concat(nazwa, rodzaj) from kreatura;
+select concat('Nazywam sie',nazwa) from kreatura;
 
+#powstanie wtedy napis nazwam sie do kazdej nazwy z tabeli np nazywam sie bjorn
+
+#pkt 3
+select nazwa, ilosc * waga from zasob where year(dataPozyskania) between 2000 and 2007;
+
+# zadanie 5 
+select nazwa
+, (ilosc*waga)*0,7 as waga_netto 
+, (ilosc*waga)*0,3 as odpadki
+from zasob
+where rodzaj='jedzenie';
+
+#daje tabele gdzie zasoby wyswietlaja sie z obliczeniami 
+
+select from zasob where rodzaj =null;
+
+select sum(udzwig) from kreatura; #
+select avg(udzwig) from kreatura; # srednia
+select max(udzwig) from kreatura;
+select min(udzwig) from kreatura;
+select count(udzwig) from kreatura; # ilosc rekordow
+select count(*) from kreatura;
+
+select avg(waga) from kreatura where rodzaj='wiking'
+
+#pkt 2 
+select avg(waga), count(*) from kreatura group by rodzaj;
+
+select nazwa, rodzaj, avg(waga), count(*) from kreatura group by rodzaj;
 
 
 
