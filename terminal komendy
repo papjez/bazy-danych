@@ -221,6 +221,11 @@ select* from kreatura, ekwipunek;
 where kreatura, idKreatury= ekwipunek, idKreatury;
 select k.nazwa, e.ilosc, e.idZasobu from kreatura k inner join ekwipunek e inner join zasob z on z.idZasobu=e.idZasobu on k.idKreatury=e.idKreatury
 
+select * from kreatura k left join ekwipunek e on k.idKreatury=e.idKreatury where e.idEkwipunku is null;
+
+select idKreatury from kreatura;
+select distinct idKreatury from ekwipunek where id kreatury is not null;
+select idkreatury from kreatura where idKreatury not in(select distinct idKreatury from ekwipunek where id kreatury is not null);
 
 
 
