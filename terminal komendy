@@ -209,10 +209,17 @@ select year(dataPozyskania), month(dataPozyskania) as miesiac, count(*) from zas
 pkt 2 
 select rodzaj, count(nazwa) from kreatura group by rodzaj having count(nazwa) > 1;
 
+select nazwa, avg(waga) from zasob where ilosc >= 4 group by nazwa having avg(waga)>10
 
+pkt 3
 
+select rodzaj, count (nazwa) from zasob where ilosc >3 group by rodzaj
 
+select count(*) from zasob where rodzaj='jedzenie'
 
+select* from kreatura, ekwipunek;
+where kreatura, idKreatury= ekwipunek, idKreatury;
+select k.nazwa, e.ilosc, e.idZasobu from kreatura k inner join ekwipunek e inner join zasob z on z.idZasobu=e.idZasobu on k.idKreatury=e.idKreatury
 
 
 
