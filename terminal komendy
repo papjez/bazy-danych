@@ -112,6 +112,65 @@ create table ekwipunek like wikingowie.ekwipunek; itd.
 
 select idZasobu, nazwa, waga, ilosc, dataPozyskania, rodzaj from wikingowie.zasob where rodzaj=('jedzenie')
 
+lab 5 zadanie 3
+
+#pkt 1
+
+select dataPozyskania from zasob;
+
+select dataPozyskania
+,year(dataPozyskania)
+,month(dataPozyskania)
+,monthname(dataPozyskania
+,day(dataPozyskania)
+from zasob;
+
+select * from zasob where month(dataPozyskania) = 7;
+
+select * from zasob where month(dataPozyskania) in (7,8);
+
+----
+
+select * from zasob where rodzaj is not null;
+
+order by wiek ASC, rodzaj DESC;
+order by 1 ASC, 2 DESC;
+
+to numery kolumn 
+
+select * from kreatura order by dataUr limit 5;
+select * from kreatura order by dataUr limit 5,5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
