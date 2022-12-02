@@ -190,8 +190,24 @@ select avg(waga), count(*) from kreatura group by rodzaj;
 
 select nazwa, rodzaj, avg(waga), count(*) from kreatura group by rodzaj;
 
+#pkt 3
 
+select rodzaj, avg(2022 - year(dataUr)) as sredni_wiek from kreatura group by rodzaj
 
+#ZADANIE 2 
+#pkt 1
+select rodzaj, sum(waga*ilosc) as waga 
+from zasob group by rodzaj;
+lub
+select nazwa, rodzaj, sum(waga*ilosc) as waga 
+from zasob group by nazwa, rodzaj with rollup order by  rodzaj;
+
+select year(dataPozyskania), month(dataPozyskania) as miesiac, count(*) from zasob group by rok, miesiac with rollup 
+
+#ciekawostka, bo to sie nie przyda
+
+pkt 2 
+select rodzaj, count(nazwa) from kreatura group by rodzaj having count(nazwa) > 1;
 
 
 
