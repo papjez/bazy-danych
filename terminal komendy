@@ -257,10 +257,29 @@ select wyprawa.nazwa, count(uczestnicy.id_uczestnika), group_concat(kreatura.naz
 inner join uczestnicy on uczestnicy.id_wyprawy = wyprawa.id_wyprawy
 inner join kreatura on kreatura.idKreatury = uczestnicy.id_uczestnika
 group by wyprawa.nazwa;
+-------------------------------------------
+zajecia
+SELECT e.idEtapu, e.idWyprawy, s.nazwa, k.nazwa FROM etapy_wyprawy 
+inner join sektor s on e.sektor=s.id_sektora inner join wyprawa w on e.idWyprawy=w.id_wyprawy 
+inner join kreatura k on w.kierownik=k.idKreatury ORDER BY w.data_rozpoczecia, e.idEtapu;
 
 
+select w.nazwa, w.data_rozpoczecia
+k.nazwa w on
 
-
+zad 3
+1. 
+select idSeltpora from sektor;
+select sektor from etapy_wuprawu
+select count (id_sektora) from sektort'
+select count(ditinct sektor from etapy_wuprawy;
+selecy nazwa, ifnull(waga,)      
+2.
+SELECT k.nazwa, IF(count(u.id_uczestnika)>0, "bral/a udzial w wyprawie", "nie bral/a udzialu") AS
+"Bral/a udzial w wyprawie?"  FROM kreatura k LEFT JOIN uczestnicy u ON u.id_uczestnika=k.idKreatury GROUP BY k.nazwa;
+___
+zad 4
+SELECT w.nazwa, sum(LENGTH(dziennik)) suma  FROM etapy_wyprawy  ew LEFT JOIN wyprawa w ON w.id_wyprawy=ew.idWyprawy  GROUP BY w.nazwa HAVING suma<400;
 
 
 
