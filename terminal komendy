@@ -279,12 +279,21 @@ SELECT k.nazwa, IF(count(u.id_uczestnika)>0, "bral/a udzial w wyprawie", "nie br
 "Bral/a udzial w wyprawie?"  FROM kreatura k LEFT JOIN uczestnicy u ON u.id_uczestnika=k.idKreatury GROUP BY k.nazwa;
 ___
 zad 4
-SELECT w.nazwa, sum(LENGTH(dziennik)) suma  FROM etapy_wyprawy  ew LEFT JOIN wyprawa w ON w.id_wyprawy=ew.idWyprawy  GROUP BY w.nazwa HAVING suma<400;
+select nazwa, sum(length(dziennik)) from wyprawa w join etapy_wyprawy ew on ew.idWyprawy=w.id_wyprawy group by nazwa having sum(length(dziennik)) < 400
 
-
-
-
-
+b)
+nazwa, sum(e.ilosc * z.waga), count(distinct u.id_uczestnika), sum(e.ilosc * z.waga) / count(distinct u.id_uczestnika)
+'Nakarm kanibala', '75.10', '6', '12.516667'
+'nikt nie idzie', NULL, '0', NULL
+'Polowanie na tesciowa', '103.70', '7', '14.814286'
+'Poszukiwanie ziecia', '14.00', '5', '2.800000'
+zad 5
+select k.nazwa, w.nazwa, datediff(data_rozpoczecia, dataUr)
+from kreatura k join uczestnicy u
+ON u.id_uczestnika=k.idKreatury join wyprawa w
+ON w.id_wyprawy=u.id_wyprawy join etapy_wyprawy ew 
+ON ew.idWyprawy=w.id_wyprawy join sektor s 
+ON s.id_sektora=ew.sektor WHERE s.nazwa="Chatka dziadka";
 
 
 
